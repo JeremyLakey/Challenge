@@ -11,7 +11,7 @@ list_keys = ["space", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"
 def press_random_key():
     pyautogui.press(random.choice(list_keys))
     
-
+#u
 def print_hi(name):
     while 1 == 1:
         time.sleep(3 * 60)
