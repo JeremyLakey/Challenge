@@ -1,10 +1,6 @@
 <template>
   <div class="home">
-    <div
-      class="message-item"
-      v-for="message in $root.$data.messages"
-      :key="message.date"
-    >
+    <div class="message-item" v-for="message in messages" :key="message.date">
       Message: {{ message.message }}
     </div>
   </div>
@@ -15,6 +11,22 @@
 
 export default {
   name: 'HomeView',
+  data() {
+    return {
+      messages: [],
+    }
+  },
+  created() {
+    this.setData()
+  },
+  methods: {
+    async setData() {
+      let result = await fetch('http://localhost:5000')
+      let json = await result.json()
+      console.log(json)
+      this.$data.messages = json
+    },
+  },
 }
 </script>
 
