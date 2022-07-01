@@ -2,12 +2,18 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const Message = require('./models/Message')
+const cors = require('cors')
 
 var app = express()
 app.use(bodyParser.json())
 app.use(
   bodyParser.urlencoded({
     extended: false,
+  })
+)
+app.use(
+  cors({
+    origin: 'http://localhost:8080',
   })
 )
 
