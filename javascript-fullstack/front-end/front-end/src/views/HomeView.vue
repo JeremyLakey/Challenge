@@ -1,7 +1,8 @@
 <template>
   <div class="home">
     <div class="message-item" v-for="message in messages" :key="message.date">
-      Message: {{ message.message }}
+      <div>Message: {{ message.message }}</div>
+      <div class="date-item">Date: {{ formateDate(message.date) }}</div>
     </div>
   </div>
 </template>
@@ -26,6 +27,15 @@ export default {
       console.log(json)
       this.$data.messages = json
     },
+    formateDate(date) {
+      console.log(date)
+      let dateTime = Date.parse(date)
+      console.log(dateTime)
+      let dateOb = new Date(dateTime)
+      console.log(dateOb)
+
+      return dateOb
+    },
   },
 }
 </script>
@@ -41,6 +51,10 @@ export default {
   margin-left: auto;
   padding: 0.25rem;
   padding-left: 2rem;
-  height: 4vh;
+  min-height: 4vh;
+}
+
+.date-item {
+  font-size: 0.5rem;
 }
 </style>
