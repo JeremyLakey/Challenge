@@ -1,18 +1,34 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div
+      class="message-item"
+      v-for="message in $root.$data.messages"
+      :key="message.date"
+    >
+      Message: {{ message.message }}
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'HomeView',
-  components: {
-    HelloWorld
-  }
 }
 </script>
+
+<style>
+.message-item {
+  max-width: 300px;
+  text-align: left;
+  border-style: solid;
+  border-width: 3px;
+  margin-bottom: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0.25rem;
+  padding-left: 2rem;
+  height: 4vh;
+}
+</style>
