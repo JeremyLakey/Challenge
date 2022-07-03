@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import android.util.Patterns
+import android.widget.TextView
 import com.challenge.tipcalculator.data.LoginRepository
 import com.challenge.tipcalculator.data.Result
 
@@ -17,16 +18,12 @@ class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel()
     private val _loginResult = MutableLiveData<LoginResult>()
     val loginResult: LiveData<LoginResult> = _loginResult
 
-    fun login(username: String, password: String) {
-        // can be launched in a separate asynchronous job
-        val result = loginRepository.login(username, password)
+    fun login(username: String, password: String): String {
+        var total : Double = username.toDouble();
+        var percentage : Double = password.toDouble() / 100;
+        var result : Double = total * percentage;
+        return "Tip Total: " + result.toString();
 
-        if (result is Result.Success) {
-            _loginResult.value =
-                LoginResult(success = LoggedInUserView(displayName = result.data.displayName))
-        } else {
-            _loginResult.value = LoginResult(error = R.string.login_failed)
-        }
     }
 
     fun loginDataChanged(username: String, password: String) {
@@ -50,6 +47,6 @@ class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel()
 
     // A placeholder password validation check
     private fun isPasswordValid(password: String): Boolean {
-        return password.length > 5
+        return password.length > 0
     }
 }

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">TipCalculator</string>
     <!-- Strings related to login -->
-    <string name="prompt_email">Email</string>
+    <string name="prompt_email">Total</string>
     <string name="prompt_password">Percentage</string>
     <string name="action_sign_in">Calculate Tip</string>
     <string name="action_sign_in_short">Total</string>
