@@ -15,6 +15,8 @@ public:
 
 	void reset();
 
+	void reverse();
+
 private:
 	struct node {
 		T item;
@@ -61,6 +63,21 @@ void LinkedList<T>::next() {
 template <class T>
 T LinkedList<T>::get() {
 	return this->current->item;
+}
+
+template <class T>
+void LinkedList<T>::reverse() {
+	node* prev = NULL;
+	node* next = NULL;
+	this->current == this->head;
+	while (this->current != NULL) {
+		next = this->current->next;
+		this->current->next = prev;
+		prev = this->current;
+		this->current = next;
+	}
+	this->current = prev;
+	this->head = prev;
 }
 
 

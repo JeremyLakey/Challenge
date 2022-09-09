@@ -1,2 +1,6 @@
 ﻿  main.cpp
+C:\Users\Jerem\Desktop\Coding Challenge\Challenge\C++ Linked List\Link List\LinkList\LinkedList.h(72,16): warning C4553: '==': result of expression not used; did you intend '='?
+C:\Users\Jerem\Desktop\Coding Challenge\Challenge\C++ Linked List\Link List\LinkList\LinkedList.h(69): message : while compiling class template member function 'void LinkedList<int>::reverse(void)'
+C:\Users\Jerem\Desktop\Coding Challenge\Challenge\C++ Linked List\Link List\LinkList\main.cpp(28): message : see reference to function template instantiation 'void LinkedList<int>::reverse(void)' being compiled
+C:\Users\Jerem\Desktop\Coding Challenge\Challenge\C++ Linked List\Link List\LinkList\main.cpp(8): message : see reference to class template instantiation 'LinkedList<int>' being compiled
   LinkList.vcxproj -> C:\Users\Jerem\Desktop\Coding Challenge\Challenge\C++ Linked List\Link List\Debug\LinkList.exe
